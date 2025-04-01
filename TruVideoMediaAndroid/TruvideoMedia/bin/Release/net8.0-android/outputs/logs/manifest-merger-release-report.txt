@@ -1,0 +1,58 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:2:1-27:12
+	package
+		INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:7:22-68
+uses-permission#android.permission.CAMERA
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:8:22-62
+uses-permission#android.permission.ACCESS_MEDIA_LOCATION
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:9:22-77
+uses-feature#android.hardware.camera
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:11:5-13:39
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:13:13-36
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:12:13-51
+uses-feature#android.hardware.camera.any
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:15:5-17:39
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:17:13-36
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:16:13-55
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:19:5-21:40
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:20:13-61
+application
+ADDED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml:23:5-25:19
+uses-sdk
+INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml
+INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/AndroidManifest.xml

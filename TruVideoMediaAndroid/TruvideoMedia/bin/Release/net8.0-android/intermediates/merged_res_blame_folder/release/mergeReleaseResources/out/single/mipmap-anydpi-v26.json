@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.truvideo.media.TruvideoMedia-release-50:/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "source": "com.truvideo.media.TruvideoMedia-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.truvideo.media.TruvideoMedia-release-50:/mipmap-anydpi-v26/ic_launcher.xml",
+        "source": "com.truvideo.media.TruvideoMedia-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

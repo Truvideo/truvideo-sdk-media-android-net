@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>0.0.1</Version>
+        <TargetFramework>net8.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsBindingProject>true</IsBindingProject>
+        <RepositoryUrl>https://github.com/Truvideo/truvideo-sdk-media-android-net</RepositoryUrl>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <NLIGradleProjectReference Include="../TruVideoMediaAndroid" >
+            <ModuleName>TruvideoMedia</ModuleName>
+            <!-- Metadata applicable to @(AndroidLibrary) will be used if set, otherwise the following defaults will be used:
+            <Bind>true</Bind>
+            <Pack>true</Pack>
+            -->
+        </NLIGradleProjectReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+    </ItemGroup>
+
+    <!--    Media Module Jar/aar-->
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\truvideo-sdk-android-media-76.2.5.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\room-common-2.6.1.jar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\room-ktx-2.6.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\room-runtime-2.6.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\sqlite-framework-2.4.0.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoMediaAndroid/TruvideoMedia/libs\sqlite-2.4.0.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <!--    Media Module Jar/aar-->
+    
+    <!-- Reference to NuGet for building bindings -->
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Maui.NativeLibraryInterop.BuildTasks" Version="0.0.1-pre1" />
+    </ItemGroup>
+</Project>

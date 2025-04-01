@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.truvideo.media.TruvideoMedia-release-50:/color-night-v8/material_timepicker_modebutton_tint.xml",
+        "source": "com.truvideo.media.TruvideoMedia-material-1.12.0-25:/color-night-v8/material_timepicker_modebutton_tint.xml"
+    },
+    {
+        "merged": "com.truvideo.media.TruvideoMedia-release-50:/color-night-v8/material_timepicker_button_stroke.xml",
+        "source": "com.truvideo.media.TruvideoMedia-material-1.12.0-25:/color-night-v8/material_timepicker_button_stroke.xml"
+    },
+    {
+        "merged": "com.truvideo.media.TruvideoMedia-release-50:/color-night-v8/material_timepicker_clockface.xml",
+        "source": "com.truvideo.media.TruvideoMedia-material-1.12.0-25:/color-night-v8/material_timepicker_clockface.xml"
+    }
+]
