@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="room-common-2.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TruVideoMediaAndroid/TruvideoMedia/libs/room-common-2.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
