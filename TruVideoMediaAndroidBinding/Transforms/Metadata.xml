@@ -9,4 +9,6 @@
   <attr path="/api/package[@name='com.truvideo.media']" name="managedName">TruVideoMediaAndroid</attr>
   <attr path="/api/package[@name='com.truvideo.media']/class[@name='DotnetTruvideoMedia']/method[@name='getMediaInformation']"
         name="visibility">public</attr>
+  <add-node path="/api/package[@name='com.truvideo.media']/class[@name='DotnetTruvideoMedia']/method[@name='setDataListener']" name="visibility">public</add-node>
+
 </metadata>

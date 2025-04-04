@@ -1,7 +1,9 @@
 package com.truvideo.media
 
+
 import android.content.Context
 import androidx.startup.AppInitializer
+import com.google.gson.Gson
 import com.truvideo.sdk.media.TruvideoSdkMedia
 import com.truvideo.sdk.media.TruvideoSdkMediaInitializer
 import com.truvideo.sdk.media.interfaces.TruvideoSdkMediaFileUploadCallback
@@ -11,77 +13,56 @@ import com.truvideo.sdk.media.model.TruvideoSdkMediaTags
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import truvideo.sdk.common.exceptions.TruvideoSdkException
 import java.io.File
 
 
 class DotnetTruvideoMedia {
+    // Method to set the listener from .NET MAUI
+    fun setDataListener(listener: DataListener) {
+        DotnetTruvideoMedia.listener = listener
+    }
+
+
     companion object {
         var mainCallback: MediaCallback? = null
+        var listener: DataListener? = null
 
         @JvmStatic
         fun uploadMedia(
             context: Context,
+            tag: String,
+            metadata: String,
             arrayList: List<String>,
             mediaCallback: MediaCallback
         ) {
             AppInitializer.getInstance(context)
                 .initializeComponent(TruvideoSdkMediaInitializer::class.java)
-            //Log.d("IMPORTANT_TAG", "initAppMediaInitializer: STARTED")
             mainCallback = mediaCallback
             arrayList.forEach {
-                upload(context, it)
+                upload(context, tag, metadata, it)
             }
         }
 
-        fun upload(context: Context?, filepath: String) {
+
+        fun upload(context: Context?, tag: String, metadata: String, filepath: String) {
             // Create a file upload request builder
             val builder = TruvideoSdkMedia.FileUploadRequestBuilder(filepath)
-            // --------------------------
-            // TAGS
-            // --------------------------
+            val tagJson = JSONObject(tag)
 
-            // Option 1: use the file upload request builder directly
-            builder.addTag("key", "value")
-            builder.addTag("color", "red")
-            builder.addTag("order-number", "123")
+            tagJson.keys().forEach {
+                val key = it
+                val value = tagJson.getString(key)
+                builder.addTag(key, value)
+            }
+            val metadataJson = JSONObject(metadata)
 
-            // Option 2: use the tag builder
-            val tags = TruvideoSdkMediaTags
-                .builder()
-                .set("key", "value")
-                .set("color", "red")
-                .set("order-number", "123")
-                .build()
-            builder.setTags(tags)
-
-            // --------------------------
-            // METADATA
-            // --------------------------
-
-            // Option 1: use the file upload request builder directly
-            builder.addMetadata("key", "value")
-            builder.addMetadata("list", listOf("value1", "value2"))
-            builder.addMetadata(
-                "nested", TruvideoSdkMediaMetadata.builder()
-                    .set("key", "value")
-                    .set("list", listOf("value1", "value2"))
-                    .build()
-            )
-
-            // Options2: use the metadata builder
-            val metadata = TruvideoSdkMediaMetadata
-                .builder()
-                .set("key", "value")
-                .set("list", listOf("value1", "value2"))
-                .set(
-                    "nested", TruvideoSdkMediaMetadata.builder()
-                        .set("key", "value")
-                        .set("list", listOf("value1", "value2"))
-                        .build()
-                )
-                .build()
-            builder.setMetadata(metadata)
+            metadataJson.keys().forEach {
+                val key = it
+                val value = metadataJson.getString(key)
+                builder.addMetadata(key, value)
+            }
             GlobalScope.launch(Dispatchers.Main) {
                 // Build the request
                 val request = try {
@@ -99,20 +80,33 @@ class DotnetTruvideoMedia {
                             response: TruvideoSdkMediaFileUploadRequest
                         ) {
                             // File uploaded successfully
-                           // Log.d("IMPORTANT_TAG", "File uploaded successfully:")
-                            //mainCallback?.onSuccess("File uploaded successfully")
-                            mainCallback?.onSuccess(response.toJson())
 
+                            //mainCallback?.onSuccess("File uploaded successfully")
+                            //mainCallback?.onSuccess(response.toJson())
+                            val mainResponse = mapOf<String, Any?>(
+                                "event" to "onComplete",
+                                "response" to "success"
+                            )
+                            listener?.onDataReceived("${mainResponse}")
+                            mainCallback?.onSuccess(response.toJson())
                         }
 
                         override fun onProgressChanged(id: String, progress: Float) {
                             // Handle uploading progress
-                           // Log.d("IMPORTANT_TAG", "File uploading progress:")
+                            val mainResponse = mapOf<String, Any?>(
+                                "event" to "onProgressChanged",
+                                "response" to progress * 100
+                            )
+                            listener?.onDataReceived("$mainResponse")
                         }
 
                         override fun onError(id: String, ex: TruvideoSdkException) {
                             // Handle file uploading error
-                            //Log.d("IMPORTANT_TAG", "File uploading error:")
+                            val mainResponse = mapOf<String, Any?>(
+                                "event" to "onError",
+                                "response" to ex
+                            )
+                            listener?.onDataReceived("$mainResponse")
                         }
                     })
                 } catch (exception: Exception) {
