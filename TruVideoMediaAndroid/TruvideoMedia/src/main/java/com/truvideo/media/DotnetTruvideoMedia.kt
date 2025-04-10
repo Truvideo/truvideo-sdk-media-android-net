@@ -7,15 +7,14 @@ import com.google.gson.Gson
 import com.truvideo.sdk.media.TruvideoSdkMedia
 import com.truvideo.sdk.media.TruvideoSdkMediaInitializer
 import com.truvideo.sdk.media.interfaces.TruvideoSdkMediaFileUploadCallback
+import com.truvideo.sdk.media.model.TruvideoSdkMediaFileType
 import com.truvideo.sdk.media.model.TruvideoSdkMediaFileUploadRequest
-import com.truvideo.sdk.media.model.TruvideoSdkMediaMetadata
 import com.truvideo.sdk.media.model.TruvideoSdkMediaTags
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import truvideo.sdk.common.exceptions.TruvideoSdkException
-import java.io.File
 
 
 class DotnetTruvideoMedia {
@@ -24,10 +23,16 @@ class DotnetTruvideoMedia {
         DotnetTruvideoMedia.listener = listener
     }
 
-
     companion object {
         var mainCallback: MediaCallback? = null
         var listener: DataListener? = null
+
+        @JvmStatic
+        fun version(callback: MediaCallback) {
+            val version = TruvideoSdkMedia.version
+            callback.onSuccess("" + version)
+        }
+
 
         @JvmStatic
         fun uploadMedia(
@@ -118,29 +123,25 @@ class DotnetTruvideoMedia {
         }
 
         @JvmStatic
-        fun getResultPath(context: Context, name: String, mediaCallback: MediaCallback) {
-            // get result path with dynamic name
-
-            var outputPath = File("${context.filesDir}/${name}").path
-            mediaCallback.onSuccess(outputPath)
-        }
-
-        @JvmStatic
-        // Function to get all image paths in a directory
-        fun getAllImagePathsInDirectoryPng(directoryPath: String): ArrayList<String> {
-            val directory = File(directoryPath)
-            val imagePaths = ArrayList<String>()
-            // Check if the directory exists and is a directory
-            if (directory.exists() && directory.isDirectory) {
-                // Recursively traverse the directory
-                directory.walkTopDown().forEach {
-                    // Filter out image files (you can add more extensions if needed)
-                    if (it.isFile && it.extension.lowercase() in listOf("png", "jpeg", "jpg")) {
-                        imagePaths.add(it.absolutePath)
-                    }
+        fun search(
+            context: Context,
+            tag: String,
+            mediaCallback: MediaCallback
+        ) {
+            GlobalScope.launch(Dispatchers.Main) {
+                val tagJson = JSONObject(tag)
+                val map = mutableMapOf<String, String>()
+                val keys = tagJson.keys()
+                while (keys.hasNext()) {
+                    val key = keys.next()
+                    map[key] = tagJson.getString(key)
                 }
+                val tags = TruvideoSdkMediaTags(map)
+                val result = TruvideoSdkMedia.search(tags, TruvideoSdkMediaFileType.Picture, 0, 10)
+                val gson = Gson()
+                val jsonResult = gson.toJson(result)
+                mediaCallback.onSuccess(jsonResult)
             }
-            return imagePaths
         }
     }
 }
