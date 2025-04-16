@@ -9,7 +9,9 @@ import com.truvideo.sdk.media.TruvideoSdkMediaInitializer
 import com.truvideo.sdk.media.interfaces.TruvideoSdkMediaFileUploadCallback
 import com.truvideo.sdk.media.model.TruvideoSdkMediaFileType
 import com.truvideo.sdk.media.model.TruvideoSdkMediaFileUploadRequest
+import com.truvideo.sdk.media.model.TruvideoSdkMediaFileUploadStatus
 import com.truvideo.sdk.media.model.TruvideoSdkMediaTags
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -33,6 +35,14 @@ class DotnetTruvideoMedia {
             callback.onSuccess("" + version)
         }
 
+        @JvmStatic
+        fun initAppMediaInitializer(context: Context, callback: MediaCallback) {
+            GlobalScope.launch(Dispatchers.Main) {
+                AppInitializer.getInstance(context)
+                    .initializeComponent(TruvideoSdkMediaInitializer::class.java)
+                callback.onSuccess("Media Initializer")
+            }
+        }
 
         @JvmStatic
         fun uploadMedia(
@@ -42,8 +52,7 @@ class DotnetTruvideoMedia {
             arrayList: List<String>,
             mediaCallback: MediaCallback
         ) {
-            AppInitializer.getInstance(context)
-                .initializeComponent(TruvideoSdkMediaInitializer::class.java)
+            AppInitializer.getInstance(context).initializeComponent(TruvideoSdkMediaInitializer::class.java)
             mainCallback = mediaCallback
             arrayList.forEach {
                 upload(context, tag, metadata, it)
@@ -68,10 +77,12 @@ class DotnetTruvideoMedia {
                 val value = metadataJson.getString(key)
                 builder.addMetadata(key, value)
             }
+
             GlobalScope.launch(Dispatchers.Main) {
                 // Build the request
                 val request = try {
                     builder.build()
+
                 } catch (exception: Exception) {
                     // handle creating request error
                     throw Exception("Error creating the file upload request")
@@ -126,6 +137,9 @@ class DotnetTruvideoMedia {
         fun search(
             context: Context,
             tag: String,
+            mediaFileTypeValue: MediaFileType,
+            pageNumber: Int,
+            size: Int,
             mediaCallback: MediaCallback
         ) {
             GlobalScope.launch(Dispatchers.Main) {
@@ -137,11 +151,100 @@ class DotnetTruvideoMedia {
                     map[key] = tagJson.getString(key)
                 }
                 val tags = TruvideoSdkMediaTags(map)
-                val result = TruvideoSdkMedia.search(tags, TruvideoSdkMediaFileType.Picture, 0, 10)
+                val mediaFileType = MediaFileTypeConverter.mediaFileType(mediaFileTypeValue)
+                val mediaType =
+                    if (mediaFileType == TruVideoSdkMediaFileType.Picture) {
+                        TruvideoSdkMediaFileType.Picture
+                    } else if (mediaFileType == TruVideoSdkMediaFileType.Video) {
+                        TruvideoSdkMediaFileType.Video
+                    }  else {
+                        TruvideoSdkMediaFileType.All
+                    }
+
+                val result = TruvideoSdkMedia.search(tags, mediaType, pageNumber, size)
                 val gson = Gson()
                 val jsonResult = gson.toJson(result)
                 mediaCallback.onSuccess(jsonResult)
             }
         }
+
+
+        @JvmStatic
+        fun streamAllRequests(context: Context, callback: MediaCallback) {
+            val allRequest = TruvideoSdkMedia.streamAllFileUploadRequests()
+            val gson = Gson()
+            val jsonResult = gson.toJson(allRequest)
+            callback.onSuccess(jsonResult)
+        }
+
+
+        @JvmStatic
+        fun getAllRequests(statusValue: String, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val status = if (statusValue.equals("IDLE", true)) {
+                    TruvideoSdkMediaFileUploadStatus.IDLE
+                } else if (statusValue.equals("ERROR", true)) {
+                    TruvideoSdkMediaFileUploadStatus.ERROR
+                }
+                else if (statusValue.equals("UPLOADING", true)) {
+                    TruvideoSdkMediaFileUploadStatus.UPLOADING
+                }
+                else if (statusValue.equals("PAUSED", true)) {
+                    TruvideoSdkMediaFileUploadStatus.PAUSED
+                }
+                else if (statusValue.equals("SYNCHRONIZING", true)) {
+                    TruvideoSdkMediaFileUploadStatus.SYNCHRONIZING
+                }
+                else if (statusValue.equals("COMPLETED", true)) {
+                    TruvideoSdkMediaFileUploadStatus.COMPLETED
+                }
+                else if (statusValue.equals("CANCELED", true)) {
+                    TruvideoSdkMediaFileUploadStatus.CANCELED
+                } else {
+                    TruvideoSdkMediaFileUploadStatus.CANCELED
+                }
+                val allRequest = TruvideoSdkMedia.getAllFileUploadRequests(status)
+                //val gson = Gson()
+                //val jsonResult = gson.toJson(allRequest)
+                callback.onSuccess(""+allRequest)
+            }
+        }
+
+        @JvmStatic
+        fun status(id: String, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val request = TruvideoSdkMedia.getFileUploadRequestById(id)
+                val status = request!!.status
+                callback.onSuccess("" + status)
+            }
+        }
+
+        @JvmStatic
+        fun cancel(id: String, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val request = TruvideoSdkMedia.getFileUploadRequestById(id)
+                request!!.cancel()
+                callback.onSuccess("Request Cancel")
+            }
+        }
+
+        @JvmStatic
+        fun delete(id: String, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val request = TruvideoSdkMedia.getFileUploadRequestById(id)
+                request!!.delete()
+                callback.onSuccess("Request delete")
+            }
+        }
+
+        @JvmStatic
+        fun pause(id: String, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val request = TruvideoSdkMedia.getFileUploadRequestById(id)
+                request!!.pause()
+                callback.onSuccess("Request pause")
+            }
+        }
+
     }
 }
