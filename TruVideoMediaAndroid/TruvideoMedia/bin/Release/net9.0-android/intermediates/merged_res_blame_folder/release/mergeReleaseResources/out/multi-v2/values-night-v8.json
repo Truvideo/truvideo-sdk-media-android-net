@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-50:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-37:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",
@@ -59,7 +59,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-48:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-35:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",

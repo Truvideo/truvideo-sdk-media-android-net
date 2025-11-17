@@ -47,15 +47,10 @@
     <string name="character_counter_content_description">Caractere introduse: %1$d din %2$d</string>
     <string name="character_counter_overflowed_content_description">Limita de caractere a depășit %1$d din %2$d</string>
     <string name="clear_text_end_icon_content_description">Ștergeți textul</string>
-    <string msgid="406453423630273620" name="close_drawer">"Închideți meniul de navigare"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Închideți foaia"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Intrare nevalidă"</string>
     <string name="error_a11y_label">Eroare: nevalidă</string>
     <string name="error_icon_content_description">Eroare</string>
     <string name="exposed_dropdown_menu_content_description">Afișați meniul drop-down</string>
     <string name="icon_content_description">Pictogramă de dialog</string>
-    <string msgid="6827826412747255547" name="in_progress">"În curs"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Nici bifată, nici debifată"</string>
     <string name="item_view_role_description">Filă</string>
     <string name="material_clock_toggle_content_description">Selectați ora</string>
     <string name="material_hour_24h_suffix">%1$s ore</string>
@@ -115,16 +110,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Atingeți pentru a comuta la afișarea An</string>
     <string name="mtrl_timepicker_cancel">Anulați</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Meniu de navigare"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Neselectat"</string>
-    <string msgid="875452955155264703" name="off">"Dezactivat"</string>
-    <string msgid="8655164131929253426" name="on">"Activat"</string>
     <string name="password_toggle_content_description">Afișați parola</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Caută"</string>
     <string name="searchview_clear_text_content_description">Ștergeți textul</string>
     <string name="searchview_navigation_content_description">Înapoi</string>
-    <string msgid="6043586758067023" name="selected">"Selectat"</string>
     <string name="side_sheet_accessibility_pane_title">Foaie laterală</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Filă"</string>
 </resources>

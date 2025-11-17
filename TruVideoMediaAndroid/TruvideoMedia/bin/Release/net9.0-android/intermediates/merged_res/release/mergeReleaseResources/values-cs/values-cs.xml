@@ -48,15 +48,10 @@
     <string name="character_counter_content_description">Zadané znaky: %1$d z %2$d</string>
     <string name="character_counter_overflowed_content_description">Byl překročen povolený počet znaků (%1$d z %2$d)</string>
     <string name="clear_text_end_icon_content_description">Vymazat text</string>
-    <string msgid="406453423630273620" name="close_drawer">"Zavřít navigační panel"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Zavřít sešit"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Neplatný údaj"</string>
     <string name="error_a11y_label">Chyba: neplatné</string>
     <string name="error_icon_content_description">Chyba</string>
     <string name="exposed_dropdown_menu_content_description">Zobrazit rozbalovací nabídku</string>
     <string name="icon_content_description">Ikona dialogového okna</string>
-    <string msgid="6827826412747255547" name="in_progress">"Probíhá"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Ani zaškrtnuto, ani nezaškrtnuto"</string>
     <string name="item_view_role_description">Karta</string>
     <string name="material_clock_toggle_content_description">Vyberte AM nebo PM</string>
     <string name="material_hour_24h_suffix">%1$s hodin</string>
@@ -116,17 +111,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Klepnutím přepnete na zobrazení jednotlivých let</string>
     <string name="mtrl_timepicker_cancel">Zrušit</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Navigační nabídka"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Nevybráno"</string>
-    <string msgid="875452955155264703" name="off">"Vyp"</string>
-    <string msgid="8655164131929253426" name="on">"Zap"</string>
     <string name="password_toggle_content_description">Zobrazit heslo</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Hledat"</string>
     <string name="searchview_clear_text_content_description">Vymazat text</string>
     <string name="searchview_navigation_content_description">Zpět</string>
-    <string msgid="6043586758067023" name="selected">"Vybráno"</string>
     <string name="side_sheet_accessibility_pane_title">Postranní list</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Karta"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> procent."</string>
 </resources>

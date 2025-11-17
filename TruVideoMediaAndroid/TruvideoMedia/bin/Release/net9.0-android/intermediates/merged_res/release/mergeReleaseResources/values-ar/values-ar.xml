@@ -50,15 +50,10 @@
     <string name="character_counter_content_description">تمّ إدخال %1$d حرف من إجمالي %2$d.</string>
     <string name="character_counter_overflowed_content_description">تجاوز عدد الأحرف المسموح به %1$d من %2$d.</string>
     <string name="clear_text_end_icon_content_description">محو النص</string>
-    <string msgid="406453423630273620" name="close_drawer">"إغلاق قائمة التنقل"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"إغلاق الورقة"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"إدخال غير صالح"</string>
     <string name="error_a11y_label">خطأ: غير صالح</string>
     <string name="error_icon_content_description">خطأ</string>
     <string name="exposed_dropdown_menu_content_description">عرض القائمة المنسدلة</string>
     <string name="icon_content_description">رمز مربع الحوار</string>
-    <string msgid="6827826412747255547" name="in_progress">"قيد التقدم"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"لم يتم وضع علامة أو إزالتها"</string>
     <string name="item_view_role_description">علامة تبويب</string>
     <string name="material_clock_toggle_content_description">يُرجى اختيار صباحًا أو مساءً.</string>
     <string name="material_hour_24h_suffix">%1$s ساعة</string>
@@ -118,17 +113,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">يمكنك النقر للتبديل إلى عرض السنة.</string>
     <string name="mtrl_timepicker_cancel">إلغاء</string>
     <string name="mtrl_timepicker_confirm">حسنًا</string>
-    <string msgid="542007171693138492" name="navigation_menu">"قائمة تنقل"</string>
-    <string msgid="6610465462668679431" name="not_selected">"غير محدّد"</string>
-    <string msgid="875452955155264703" name="off">"غير مفعّل"</string>
-    <string msgid="8655164131929253426" name="on">"مفعّل"</string>
     <string name="password_toggle_content_description">عرض كلمة المرور</string>
     <string msgid="6264217191555673260" name="search_menu_title">"البحث"</string>
     <string name="searchview_clear_text_content_description">محو النص</string>
     <string name="searchview_navigation_content_description">رجوع</string>
-    <string msgid="6043586758067023" name="selected">"محدّد"</string>
     <string name="side_sheet_accessibility_pane_title">ورقة جانبية</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"علامة تبويب"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> في المئة."</string>
 </resources>

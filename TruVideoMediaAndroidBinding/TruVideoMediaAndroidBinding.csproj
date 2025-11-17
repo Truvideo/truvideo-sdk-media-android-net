@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>0.0.3</Version>
+        <Version>1.0.0</Version>
         <TargetFramework>net9.0-android</TargetFramework>
         <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <IsBindingProject>true</IsBindingProject>
         <RepositoryUrl>https://github.com/Truvideo/truvideo-sdk-media-android-net</RepositoryUrl>
+        <!-- Suppress package downgrade warning -->
     </PropertyGroup>
 
     <!-- Native Gradle module reference -->
@@ -25,10 +26,13 @@
 
     <!-- Android AAR/JAR references -->
     <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\truvideo-sdk-android-media-76.2.5.aar" Bind="false" Visible="false" />
+        <!-- TruVideo Media SDK AAR -->
+        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\truvideo-sdk-android-media-78.1.9.aar" Bind="false" Visible="false" />
+        <!-- Android Room persistence library -->
         <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-common-2.6.1.jar" Bind="false" Visible="false" />
         <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-ktx-2.6.1.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-runtime-2.6.1.aar" Bind="false" Visible="false" />
+        <!-- Android SQLite library -->
         <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\sqlite-framework-2.4.0.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\sqlite-2.4.0.aar" Bind="false" Visible="false" />
     </ItemGroup>

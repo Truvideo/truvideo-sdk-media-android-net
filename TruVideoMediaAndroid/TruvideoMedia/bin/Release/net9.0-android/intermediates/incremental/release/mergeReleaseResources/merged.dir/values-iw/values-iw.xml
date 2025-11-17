@@ -47,15 +47,10 @@
     <string name="character_counter_content_description">הוזנו %1$d תווים מתוך %2$d</string>
     <string name="character_counter_overflowed_content_description">מגבלת התווים חורגת ב-%1$d מתוך %2$d</string>
     <string name="clear_text_end_icon_content_description">מחיקת הטקסט</string>
-    <string msgid="406453423630273620" name="close_drawer">"סגירת תפריט הניווט"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"סגירת הגיליון"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"הקלט לא תקין"</string>
     <string name="error_a11y_label">שגיאה: לא תקין</string>
     <string name="error_icon_content_description">שגיאה</string>
     <string name="exposed_dropdown_menu_content_description">הצגת התפריט הנפתח</string>
     <string name="icon_content_description">סמל לתיבת דו-שיח</string>
-    <string msgid="6827826412747255547" name="in_progress">"בתהליך"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"עם סימון ובלי סימון"</string>
     <string name="item_view_role_description">מקש Tab</string>
     <string name="material_clock_toggle_content_description">יש לבחור ב-AM או ב-PM</string>
     <string name="material_hour_24h_suffix">%1$s שעות</string>
@@ -115,17 +110,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">יש להקיש כדי לעבור לתצוגת שנתית</string>
     <string name="mtrl_timepicker_cancel">ביטול</string>
     <string name="mtrl_timepicker_confirm">אישור</string>
-    <string msgid="542007171693138492" name="navigation_menu">"תפריט הניווט"</string>
-    <string msgid="6610465462668679431" name="not_selected">"לא נבחר"</string>
-    <string msgid="875452955155264703" name="off">"כבוי"</string>
-    <string msgid="8655164131929253426" name="on">"פועל"</string>
     <string name="password_toggle_content_description">הצגת סיסמה</string>
     <string msgid="6264217191555673260" name="search_menu_title">"חיפוש"</string>
     <string name="searchview_clear_text_content_description">מחיקת הטקסט</string>
     <string name="searchview_navigation_content_description">חזרה</string>
-    <string msgid="6043586758067023" name="selected">"נבחר"</string>
     <string name="side_sheet_accessibility_pane_title">גיליון צדדי</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"‏מקש Tab"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> אחוזים."</string>
 </resources>

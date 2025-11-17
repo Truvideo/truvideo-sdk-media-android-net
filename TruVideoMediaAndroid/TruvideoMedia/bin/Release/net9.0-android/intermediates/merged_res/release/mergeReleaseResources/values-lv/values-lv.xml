@@ -47,15 +47,10 @@
     <string name="character_counter_content_description">Ievadītās rakstzīmes: %1$d no %2$d</string>
     <string name="character_counter_overflowed_content_description">Pārsniegts rakstzīmju skaita ierobežojums (%1$d no %2$d)</string>
     <string name="clear_text_end_icon_content_description">Notīrīt tekstu</string>
-    <string msgid="406453423630273620" name="close_drawer">"Aizvērt navigācijas izvēlni"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Aizvērt izklājlapu"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Nederīga ievade"</string>
     <string name="error_a11y_label">Kļūda: nederīga</string>
     <string name="error_icon_content_description">Kļūda</string>
     <string name="exposed_dropdown_menu_content_description">Rādīt nolaižamo izvēlni</string>
     <string name="icon_content_description">Dialoglodziņa ikona</string>
-    <string msgid="6827826412747255547" name="in_progress">"Notiek apstrāde"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Nav ne atzīmēta, ne neatzīmēta"</string>
     <string name="item_view_role_description">Cilne</string>
     <string name="material_clock_toggle_content_description">Atlasiet “AM” (priekšpusdienā) vai “PM” (pēcpusdienā).</string>
     <string name="material_hour_24h_suffix">%1$s stundas</string>
@@ -115,17 +110,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Pieskarieties, lai pārslēgtos uz gada skatu</string>
     <string name="mtrl_timepicker_cancel">Atcelt</string>
     <string name="mtrl_timepicker_confirm">Labi</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Navigācijas izvēlne"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Nav atlasīts"</string>
-    <string msgid="875452955155264703" name="off">"Izslēgts"</string>
-    <string msgid="8655164131929253426" name="on">"Ieslēgts"</string>
     <string name="password_toggle_content_description">Rādīt paroli</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Meklēt"</string>
     <string name="searchview_clear_text_content_description">Notīrīt tekstu</string>
     <string name="searchview_navigation_content_description">Atpakaļ</string>
-    <string msgid="6043586758067023" name="selected">"Atlasīts"</string>
     <string name="side_sheet_accessibility_pane_title">Sānu lapa</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Cilne"</string>
-    <string msgid="5946805113151406391" name="template_percent">"Procenti: <ns1:g id="PERCENTAGE">%1$d</ns1:g>."</string>
 </resources>

@@ -48,15 +48,10 @@
     <string name="character_counter_content_description">%1$d z %2$d znaków</string>
     <string name="character_counter_overflowed_content_description">Przekroczono limit znaków (%1$d z %2$d)</string>
     <string name="clear_text_end_icon_content_description">Wyczyść tekst</string>
-    <string msgid="406453423630273620" name="close_drawer">"Zamknij menu nawigacyjne"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Zamknij arkusz"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Nieprawidłowe dane wejściowe"</string>
     <string name="error_a11y_label">Błąd: nieprawidłowe</string>
     <string name="error_icon_content_description">Błąd</string>
     <string name="exposed_dropdown_menu_content_description">Pokaż menu</string>
     <string name="icon_content_description">Ikona okna</string>
-    <string msgid="6827826412747255547" name="in_progress">"W toku"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Ani nie zaznaczono, ani nie odznaczono"</string>
     <string name="item_view_role_description">Karta</string>
     <string name="material_clock_toggle_content_description">Wybierz: przed południem czy po południu</string>
     <string name="material_hour_24h_suffix">%1$s godz.</string>
@@ -116,17 +111,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Kliknij, aby przełączyć się na widok roku</string>
     <string name="mtrl_timepicker_cancel">Anuluj</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Menu nawigacyjne"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Nie wybrano"</string>
-    <string msgid="875452955155264703" name="off">"Wyłączono"</string>
-    <string msgid="8655164131929253426" name="on">"Włączono"</string>
     <string name="password_toggle_content_description">Pokaż hasło</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Szukaj"</string>
     <string name="searchview_clear_text_content_description">Wyczyść tekst</string>
     <string name="searchview_navigation_content_description">Wstecz</string>
-    <string msgid="6043586758067023" name="selected">"Wybrano"</string>
     <string name="side_sheet_accessibility_pane_title">Arkusz boczny</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Karta"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> procent."</string>
 </resources>

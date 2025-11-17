@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-48:/values-v23/values-v23.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-35:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/02bd30ce6b8d317d389ab0d0c0742a6d/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
@@ -55,7 +55,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-50:/values-v23/values-v23.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-37:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/02bd30ce6b8d317d389ab0d0c0742a6d/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

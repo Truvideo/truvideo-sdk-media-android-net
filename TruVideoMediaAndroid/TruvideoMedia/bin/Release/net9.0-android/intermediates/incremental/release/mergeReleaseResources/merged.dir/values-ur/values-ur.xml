@@ -46,15 +46,10 @@
     <string name="character_counter_content_description">%2$d میں سے %1$d حروف درج کیے گئے</string>
     <string name="character_counter_overflowed_content_description">حروف کی تعداد کی حد %2$d سے %1$d پہنچ گئی</string>
     <string name="clear_text_end_icon_content_description">ٹیکسٹ صاف کریں</string>
-    <string msgid="406453423630273620" name="close_drawer">"نیویگیشن مینو بند کریں"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"شیٹ بند کریں"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"غلط ان پٹ"</string>
     <string name="error_a11y_label">خرابی: غلط</string>
     <string name="error_icon_content_description">خرابی</string>
     <string name="exposed_dropdown_menu_content_description">ڈراپ ڈاؤن مینیو دکھائیں</string>
     <string name="icon_content_description">ڈائیلاگ کا آئیکن</string>
-    <string msgid="6827826412747255547" name="in_progress">"پیشرفت میں"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"نہ تو نشان زد کیا گیا نہ ہی نشان ہٹایا گیا"</string>
     <string name="item_view_role_description">ٹیب</string>
     <string name="material_clock_toggle_content_description">AM یا PM منتخب کریں</string>
     <string name="material_hour_24h_suffix">%1$s گھنٹے</string>
@@ -114,17 +109,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">سال کے منظر پر سوئچ کرنے کے لیے تھپتھپائیں</string>
     <string name="mtrl_timepicker_cancel">منسوخ کریں</string>
     <string name="mtrl_timepicker_confirm">ٹھیک ہے</string>
-    <string msgid="542007171693138492" name="navigation_menu">"نیویگیشن مینو"</string>
-    <string msgid="6610465462668679431" name="not_selected">"غیر منتخب کردہ"</string>
-    <string msgid="875452955155264703" name="off">"آف ہے"</string>
-    <string msgid="8655164131929253426" name="on">"آن ہے"</string>
     <string name="password_toggle_content_description">پاس ورڈ دکھائیں</string>
     <string msgid="6264217191555673260" name="search_menu_title">"تلاش کریں"</string>
     <string name="searchview_clear_text_content_description">ٹیکسٹ صاف کریں</string>
     <string name="searchview_navigation_content_description">واپس جائیں</string>
-    <string msgid="6043586758067023" name="selected">"منتخب کردہ"</string>
     <string name="side_sheet_accessibility_pane_title">سائیڈ شیٹ</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"+999"</string>
-    <string msgid="1672349317127674378" name="tab">"ٹیب"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> فیصد۔"</string>
 </resources>

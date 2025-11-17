@@ -46,15 +46,10 @@
     <string name="character_counter_content_description">Mga character na nailagay %1$d sa %2$d</string>
     <string name="character_counter_overflowed_content_description">Lumampas sa limitasyon sa bilang ng character %1$d sa %2$d</string>
     <string name="clear_text_end_icon_content_description">I-clear ang text</string>
-    <string msgid="406453423630273620" name="close_drawer">"Isara ang menu ng navigation"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Isara ang sheet"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Invalid na input"</string>
     <string name="error_a11y_label">Error: invalid</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Ipakita ang dropdown na menu</string>
     <string name="icon_content_description">Icon ng Dialog</string>
-    <string msgid="6827826412747255547" name="in_progress">"Isinasagawa"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Hindi may check o walang check"</string>
     <string name="item_view_role_description">Tab</string>
     <string name="material_clock_toggle_content_description">Piliin ang AM o PM</string>
     <string name="material_hour_24h_suffix">%1$s (na) oras</string>
@@ -114,17 +109,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">I-tap para lumipat sa view ng taon</string>
     <string name="mtrl_timepicker_cancel">Kanselahin</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Menu ng navigation"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Hindi napili"</string>
-    <string msgid="875452955155264703" name="off">"Naka-off"</string>
-    <string msgid="8655164131929253426" name="on">"Naka-on"</string>
     <string name="password_toggle_content_description">Ipakita ang password</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Maghanap"</string>
     <string name="searchview_clear_text_content_description">I-clear ang text</string>
     <string name="searchview_navigation_content_description">Bumalik</string>
-    <string msgid="6043586758067023" name="selected">"Napili"</string>
     <string name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Tab"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> (na) porsyento."</string>
 </resources>

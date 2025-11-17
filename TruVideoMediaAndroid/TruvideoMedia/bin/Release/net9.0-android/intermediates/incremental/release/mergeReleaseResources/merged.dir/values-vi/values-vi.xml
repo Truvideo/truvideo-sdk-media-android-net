@@ -46,15 +46,10 @@
     <string name="character_counter_content_description">Đã nhập %1$d trong số %2$d ký tự</string>
     <string name="character_counter_overflowed_content_description">Đã vượt quá giới hạn ký tự %1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Xóa văn bản</string>
-    <string msgid="406453423630273620" name="close_drawer">"Đóng trình đơn điều hướng"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"Đóng trang tính"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"Giá trị nhập không hợp lệ"</string>
     <string name="error_a11y_label">Lỗi: không hợp lệ</string>
     <string name="error_icon_content_description">Lỗi</string>
     <string name="exposed_dropdown_menu_content_description">Hiển thị menu thả xuống</string>
     <string name="icon_content_description">Biểu tượng hộp thoại</string>
-    <string msgid="6827826412747255547" name="in_progress">"Đang thực hiện"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"Không đánh dấu cũng không bỏ đánh dấu"</string>
     <string name="item_view_role_description">Thẻ</string>
     <string name="material_clock_toggle_content_description">Chọn SA hoặc CH</string>
     <string name="material_hour_24h_suffix">%1$s giờ</string>
@@ -114,16 +109,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">Nhấn để chuyển sang chế độ xem theo năm</string>
     <string name="mtrl_timepicker_cancel">Huỷ</string>
     <string name="mtrl_timepicker_confirm">OK</string>
-    <string msgid="542007171693138492" name="navigation_menu">"Trình đơn điều hướng"</string>
-    <string msgid="6610465462668679431" name="not_selected">"Chưa chọn"</string>
-    <string msgid="875452955155264703" name="off">"Đang tắt"</string>
-    <string msgid="8655164131929253426" name="on">"Đang bật"</string>
     <string name="password_toggle_content_description">Hiện mật khẩu</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Tìm kiếm"</string>
     <string name="searchview_clear_text_content_description">Xoá văn bản</string>
     <string name="searchview_navigation_content_description">Quay lại</string>
-    <string msgid="6043586758067023" name="selected">"Đã chọn"</string>
     <string name="side_sheet_accessibility_pane_title">Trang bên</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"Thẻ"</string>
 </resources>

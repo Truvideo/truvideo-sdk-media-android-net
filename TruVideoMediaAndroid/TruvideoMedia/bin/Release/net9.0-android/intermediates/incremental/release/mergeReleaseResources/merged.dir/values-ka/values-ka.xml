@@ -46,15 +46,10 @@
     <string name="character_counter_content_description">შეყვანილია %2$d-დან %1$d სიმბოლო</string>
     <string name="character_counter_overflowed_content_description">გადაჭარბებულია სიმბოლოთა ლიმიტი (%2$d-დან %1$d)</string>
     <string name="clear_text_end_icon_content_description">ტექსტის გასუფთავება</string>
-    <string msgid="406453423630273620" name="close_drawer">"ნავიგაციის მენიუს დახურვა"</string>
-    <string msgid="7573152094250666567" name="close_sheet">"ფურცლის დახურვა"</string>
-    <string msgid="8038256446254964252" name="default_error_message">"შენატანი არასწორია"</string>
     <string name="error_a11y_label">შეცდომა: არასწორი</string>
     <string name="error_icon_content_description">შეცდომა</string>
     <string name="exposed_dropdown_menu_content_description">ჩამოსაშლელი მენიუს ჩვენება</string>
     <string name="icon_content_description">დიალოგის ხატულა</string>
-    <string msgid="6827826412747255547" name="in_progress">"მუშავდება"</string>
-    <string msgid="2486394087603402002" name="indeterminate">"არც მონიშნულია და არც მოუნიშნავი"</string>
     <string name="item_view_role_description">ჩანართი</string>
     <string name="material_clock_toggle_content_description">აირჩიეთ AM ან PM</string>
     <string name="material_hour_24h_suffix">%1$s საათი</string>
@@ -114,17 +109,10 @@
     <string name="mtrl_picker_toggle_to_year_selection">შეეხეთ წლის ხედზე გადასართავად</string>
     <string name="mtrl_timepicker_cancel">გაუქმება</string>
     <string name="mtrl_timepicker_confirm">კარგი</string>
-    <string msgid="542007171693138492" name="navigation_menu">"ნავიგაციის მენიუ"</string>
-    <string msgid="6610465462668679431" name="not_selected">"არ არის არჩეული"</string>
-    <string msgid="875452955155264703" name="off">"გამორთული"</string>
-    <string msgid="8655164131929253426" name="on">"ჩართული"</string>
     <string name="password_toggle_content_description">პაროლის ჩვენება</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ძიება"</string>
     <string name="searchview_clear_text_content_description">ტექსტის გასუფთავება</string>
     <string name="searchview_navigation_content_description">უკან</string>
-    <string msgid="6043586758067023" name="selected">"არჩეული"</string>
     <string name="side_sheet_accessibility_pane_title">გვერდითი ფურცელი</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
-    <string msgid="1672349317127674378" name="tab">"ჩანართი"</string>
-    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> პროცენტი."</string>
 </resources>
