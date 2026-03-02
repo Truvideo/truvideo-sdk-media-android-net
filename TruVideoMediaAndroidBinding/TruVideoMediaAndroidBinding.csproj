@@ -1,7 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>1.0.0</Version>
+        <Version>1.0.0-beta.1</Version>
         <TargetFramework>net10.0-android</TargetFramework>
+        <MauiVersion>10.0.10</MauiVersion>
         <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -19,22 +20,19 @@
 
     <!-- Optional MAUI packages (only if testing in a MAUI app project) -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.0" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0"/>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+        <!-- Room / SQLite -->
+        <PackageReference Include="Xamarin.AndroidX.Room.Runtime" Version="2.8.3"/>
+        <PackageReference Include="Xamarin.AndroidX.Sqlite" Version="2.6.1"/>
+        <PackageReference Include="Xamarin.AndroidX.Sqlite.Framework" Version="2.6.1"/>
     </ItemGroup>
 
     <!-- Android AAR/JAR references -->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
         <!-- TruVideo Media SDK AAR -->
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\truvideo-sdk-android-media-78.1.9.aar" Bind="false" Visible="false" />
-        <!-- Android Room persistence library -->
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-common-2.6.1.jar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-ktx-2.6.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\room-runtime-2.6.1.aar" Bind="false" Visible="false" />
-        <!-- Android SQLite library -->
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\sqlite-framework-2.4.0.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\sqlite-2.4.0.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="..\TruVideoMediaAndroid\TruvideoMedia\libs\truvideo-sdk-android-media-79.1.2.aar" Bind="false" Visible="false" />
     </ItemGroup>
 
     <!-- Required for NativeLibraryInterop build -->

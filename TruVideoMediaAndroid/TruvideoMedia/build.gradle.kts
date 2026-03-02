@@ -43,10 +43,9 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.truvideo.sdk.android.media)
-    //implementation("com.github.Truvideo:truvideo-sdk-android-media:78.1.9")
-    /*configurations["copyDependencies"].dependencies.add(
-        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-media:78.1.9")
-    )*/
+//    configurations["copyDependencies"].dependencies.add(
+//        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-media:79.1.2")
+//    )
 
 
 }

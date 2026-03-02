@@ -128,7 +128,8 @@ class DotnetTruvideoMedia {
                     })
                 } catch (exception: Exception) {
                     // Handle start to upload error
-                    throw Exception("Error starting to upload the file")
+                    //throw Exception("Error starting to upload the file")
+                    mainCallback?.onFailure("Error starting to upload the file")
                 }
 
             }
@@ -146,7 +147,7 @@ class DotnetTruvideoMedia {
                     builder(filePath, tag, metaData, callback)
                 }
             } catch (e: Exception) {
-                mainCallback?.onFailure("Builder failed: ${e.message}")
+                mainCallback?.onFailure("Builder failed:")
             }
         }
 
@@ -270,7 +271,8 @@ class DotnetTruvideoMedia {
                         })
                     } catch (exception: Exception) {
                         // Handle start to upload error
-                        throw Exception("Error starting to upload the file")
+                        //throw Exception("Error starting to upload the file")
+                        callback.onFailure("Error starting to upload the file")
                     }
 
                 }
@@ -285,6 +287,7 @@ class DotnetTruvideoMedia {
         fun search(context: Context, tag: String, mediaFileTypeValue: MediaFileType, isLibrary: Boolean, size: Int, mediaCallback: MediaCallback) {
             try {
                 CoroutineScope(Dispatchers.Main).launch {
+                    try {
                     val tagJson = JSONObject(tag)
                     val map = mutableMapOf<String, String>()
                     val keys = tagJson.keys()
@@ -299,7 +302,14 @@ class DotnetTruvideoMedia {
                             TruvideoSdkMediaFileType.Picture
                         } else if (mediaFileType == TruVideoSdkMediaFileType.Video) {
                             TruvideoSdkMediaFileType.Video
-                        } else {
+                        }
+                        else if (mediaFileType == TruVideoSdkMediaFileType.Audio) {
+                            TruvideoSdkMediaFileType.AUDIO
+                        }
+                        else if (mediaFileType == TruVideoSdkMediaFileType.Document) {
+                            TruvideoSdkMediaFileType.PDF
+                        }
+                        else {
                             TruvideoSdkMediaFileType.All
                         }
 
@@ -307,10 +317,13 @@ class DotnetTruvideoMedia {
                     val gson = Gson()
                     val jsonResult = gson.toJson(result)
                     mediaCallback.onSuccess(jsonResult)
+                    } catch (e: Exception) {
+                        mediaCallback.onFailure("Search failed:")
+                    }
                 }
 
             } catch (e: Exception) {
-                mediaCallback.onFailure("Search failed: ${e.message}")
+                mediaCallback.onFailure("Search failed:")
             }
         }
 
@@ -319,6 +332,7 @@ class DotnetTruvideoMedia {
 
             try {
                 CoroutineScope(Dispatchers.Main).launch {
+                    try {
                     val tagJson = JSONObject(tag)
                     val map = mutableMapOf<String, String>()
                     val keys = tagJson.keys()
@@ -333,7 +347,14 @@ class DotnetTruvideoMedia {
                             TruvideoSdkMediaFileType.Picture
                         } else if (mediaFileType == TruVideoSdkMediaFileType.Video) {
                             TruvideoSdkMediaFileType.Video
-                        } else {
+                        }
+                        else if (mediaFileType == TruVideoSdkMediaFileType.Audio) {
+                            TruvideoSdkMediaFileType.AUDIO
+                        }
+                        else if (mediaFileType == TruVideoSdkMediaFileType.Document) {
+                            TruvideoSdkMediaFileType.PDF
+                        }
+                        else {
                             TruvideoSdkMediaFileType.All
                         }
 
@@ -342,9 +363,12 @@ class DotnetTruvideoMedia {
                     val gson = Gson()
                     val jsonResult = gson.toJson(result)
                     mediaCallback.onSuccess(jsonResult)
+                    } catch (e: Exception) {
+                        mediaCallback.onFailure("Search failed:")
+                    }
                 }
             } catch (e: Exception) {
-                mediaCallback.onFailure("Search failed: ${e.message}")
+                mediaCallback.onFailure("Search failed:")
             }
         }
 
@@ -353,12 +377,16 @@ class DotnetTruvideoMedia {
          fun getFileUploadRequestById(id: String, callback: MediaCallback) {
             try{
                 CoroutineScope(Dispatchers.Main).launch {
+                    try{
                     val request = TruvideoSdkMedia.getFileUploadRequestById(id)
                     if(request == null){
                         callback.onSuccess("{}")
                     }else{
                         val mainResponse = returnRequest(request)
                         callback.onSuccess(mainResponse)
+                    }
+                    }catch (e: Exception){
+                        callback.onFailure("Get request failed: ${e.message}")
                     }
                 }
             }catch (e: Exception){
@@ -444,15 +472,38 @@ class DotnetTruvideoMedia {
         fun pause(id: String, callback: MediaCallback) {
             try {
                 CoroutineScope(Dispatchers.Main).launch {
+                 try {
                     val request = TruvideoSdkMedia.getFileUploadRequestById(id)
                     request!!.pause()
                     callback.onSuccess("Request pause")
+                    
+                    } catch (e: Exception) {
+                                    callback.onFailure("Pause failed")
+                     }
                 }
 
             } catch (e: Exception) {
-                callback.onFailure("Pause failed: ${e.message}")
+                callback.onFailure("Pause failed")
             }
         }
+        
+        // ✅ Resume
+                @JvmStatic
+                fun resume(id: String, callback: MediaCallback) {
+                    try {
+                        CoroutineScope(Dispatchers.Main).launch {
+                         try {
+                            val request = TruvideoSdkMedia.getFileUploadRequestById(id)
+                            request!!.resume()
+                            callback.onSuccess("Request Resume")
+                            } catch (e: Exception) {
+                                                    callback.onFailure("Resume failed")
+                                                }
+                        }
+                    } catch (e: Exception) {
+                        callback.onFailure("Resume failed")
+                    }
+                }
 
         // ✅ Stream All
         @JvmStatic

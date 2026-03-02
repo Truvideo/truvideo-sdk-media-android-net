@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-37:/values-fr/values-fr.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-34:/values-fr/values-fr.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/82b84979b736fb4832ffcdb744a3371c/transformed/material-1.12.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/dbfc1a6ece6d375ffef8a43239ae289f/transformed/core-1.15.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/b44b0cee44ff8180665847223ddc0259/transformed/core-1.15.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/48786db5103ee6acad6584903489f5df/transformed/appcompat-1.7.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,10 +59,10 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-35:/values-fr/values-fr.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-32:/values-fr/values-fr.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/82b84979b736fb4832ffcdb744a3371c/transformed/material-1.12.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -81,7 +81,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/dbfc1a6ece6d375ffef8a43239ae289f/transformed/core-1.15.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/b44b0cee44ff8180665847223ddc0259/transformed/core-1.15.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -98,7 +98,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/48786db5103ee6acad6584903489f5df/transformed/appcompat-1.7.0/res/values-fr/values-fr.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

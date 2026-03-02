@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-37:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-34:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/48786db5103ee6acad6584903489f5df/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -17,10 +17,10 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-35:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-32:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/48786db5103ee6acad6584903489f5df/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
