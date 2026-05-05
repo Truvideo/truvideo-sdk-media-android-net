@@ -1,10 +1,10 @@
 [
     {
-        "merged": "com.truvideo.media.TruvideoMedia-release-34:/mipmap-hdpi-v4/ic_launcher.webp",
-        "source": "com.truvideo.media.TruvideoMedia-main-35:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.truvideo.media.TruvideoMedia-release-48:/mipmap-hdpi-v4/ic_launcher_round.webp",
+        "source": "com.truvideo.media.TruvideoMedia-main-49:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.truvideo.media.TruvideoMedia-release-34:/mipmap-hdpi-v4/ic_launcher_round.webp",
-        "source": "com.truvideo.media.TruvideoMedia-main-35:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.truvideo.media.TruvideoMedia-release-48:/mipmap-hdpi-v4/ic_launcher.webp",
+        "source": "com.truvideo.media.TruvideoMedia-main-49:/mipmap-hdpi/ic_launcher.webp"
     }
 ]

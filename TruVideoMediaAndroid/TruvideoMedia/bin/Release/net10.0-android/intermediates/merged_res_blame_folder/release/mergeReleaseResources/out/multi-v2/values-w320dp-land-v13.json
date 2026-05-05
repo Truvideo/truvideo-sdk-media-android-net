@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-32:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-34:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",

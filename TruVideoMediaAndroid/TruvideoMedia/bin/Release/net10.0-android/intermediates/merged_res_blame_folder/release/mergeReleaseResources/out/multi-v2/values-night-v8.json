@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-34:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -59,7 +59,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-32:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",
@@ -81,7 +81,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/e6c1bb3b441e057f78e4b9c05cc39642/transformed/appcompat-1.7.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
