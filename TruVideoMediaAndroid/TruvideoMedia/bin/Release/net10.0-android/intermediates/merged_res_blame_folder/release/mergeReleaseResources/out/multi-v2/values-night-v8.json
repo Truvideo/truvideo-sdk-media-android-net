@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-42:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,7 +59,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-44:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-media-android-net/TruVideoMediaAndroid/TruvideoMedia/src/main/res/values-night/themes.xml",
@@ -81,7 +81,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -98,7 +98,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

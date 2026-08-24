@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-42:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -33,10 +33,10 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-44:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -46,7 +46,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

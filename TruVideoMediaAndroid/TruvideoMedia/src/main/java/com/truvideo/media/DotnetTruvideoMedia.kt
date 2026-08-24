@@ -4,28 +4,27 @@ package com.truvideo.media
 import android.content.Context
 import android.os.Build
 import android.util.Log
+import androidx.startup.AppInitializer
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.truvideo.sdk.media.TruvideoSdkMedia
-//import com.truvideo.sdk.media.TruvideoSdkMediaInitializer
+import com.truvideo.sdk.media.initializer.TruvideoSdkMediaInitializer
 import com.truvideo.sdk.media.interfaces.TruvideoSdkMediaFileUploadCallback
-//import com.truvideo.sdk.media.model.TruvideoSdkMediaFileType
-//import com.truvideo.sdk.media.model.TruvideoSdkMediaFileUploadRequest
-//import com.truvideo.sdk.media.model.TruvideoSdkMediaFileUploadStatus
-//import com.truvideo.sdk.media.model.TruvideoSdkMediaTags
+
 import com.truvideo.sdk.media.model.external.TruvideoSdkMediaFileType
 import com.truvideo.sdk.media.model.external.TruvideoSdkMediaFileUploadRequest
 import com.truvideo.sdk.media.model.external.TruvideoSdkMediaFileUploadRequestStatus
 import com.truvideo.sdk.media.model.external.TruvideoSdkMediaMetadata
 import com.truvideo.sdk.media.model.external.TruvideoSdkMediaTags
+import com.truvideo.sdk.media.model.external.TruvideoSdkMediaUploadRequest
+import com.truvideo.sdk.model.exceptions.TruvideoSdkException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import truvideo.sdk.common.exceptions.TruvideoSdkException
 import java.io.File
 import java.time.format.DateTimeFormatter
 
@@ -40,18 +39,18 @@ class DotnetTruvideoMedia {
         var listener: DataListener? = null
 
         // ✅ Version
-        @JvmStatic
+        /*@JvmStatic
         fun version(callback: MediaCallback) {
             val version = TruvideoSdkMedia.version
             callback.onSuccess("" + version)
-        }
+        }*/
 
         // ✅ Init Media
         @JvmStatic
         fun initAppMediaInitializer(context: Context, callback: MediaCallback) {
             CoroutineScope(Dispatchers.Main).launch {
-                // AppInitializer.getInstance(context)
-                //  .initializeComponent(TruvideoSdkMediaInitializer::class.java)
+                 AppInitializer.getInstance(context)
+                  .initializeComponent(TruvideoSdkMediaInitializer::class.java)
                 callback.onSuccess("Media Initializer")
             }
         }
@@ -734,193 +733,149 @@ class DotnetTruvideoMedia {
         }
 
         // ✅ Get all requests
+
+
         @JvmStatic
         fun getAllRequests(statusValue: String, callback: MediaCallback) {
             try {
                 CoroutineScope(Dispatchers.Main).launch {
-                    try{
+                    try {
 
-                    /* if (statusValue == "") {
-                         val request = TruvideoSdkMedia.getAllFileUploadRequests()
-                         callback.onSuccess("" + request)
-                     } else {
-                         val mainStatus: TruvideoSdkMediaFileUploadStatus? = when (statusValue) {
-                             "UPLOADING" -> TruvideoSdkMediaFileUploadStatus.UPLOADING
-                             "IDLE" -> TruvideoSdkMediaFileUploadStatus.IDLE
-                             "ERROR" -> TruvideoSdkMediaFileUploadStatus.ERROR
-                             "PAUSED" -> TruvideoSdkMediaFileUploadStatus.PAUSED
-                             "COMPLETED" -> TruvideoSdkMediaFileUploadStatus.COMPLETED
-                             "CANCELED" -> TruvideoSdkMediaFileUploadStatus.CANCELED
-                             "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadStatus.SYNCHRONIZING
-                             else -> null
-                         }
-                         val request = TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
-                         callback.onSuccess("" + request)
-                     }*/
+                        val requests = if (statusValue == "") {
 
-                    if (statusValue == "") {
-                        val request = TruvideoSdkMedia.getAllFileUploadRequests()
-                        //callback.onSuccess("" + request)
-                        val gson = Gson()
-                        val jsonResult = gson.toJson(request)
+                            TruvideoSdkMedia.getAllFileUploadRequests()
+
+                        } else {
+
+                            val mainStatus: TruvideoSdkMediaFileUploadRequestStatus? =
+                                when (statusValue) {
+                                    "UPLOADING" -> TruvideoSdkMediaFileUploadRequestStatus.UPLOADING
+                                    "IDLE" -> TruvideoSdkMediaFileUploadRequestStatus.IDLE
+                                    "ERROR" -> TruvideoSdkMediaFileUploadRequestStatus.ERROR
+                                    "PAUSED" -> TruvideoSdkMediaFileUploadRequestStatus.PAUSED
+                                    "COMPLETED" -> TruvideoSdkMediaFileUploadRequestStatus.COMPLETED
+                                    "CANCELED" -> TruvideoSdkMediaFileUploadRequestStatus.CANCELED
+                                    "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadRequestStatus.SYNCHRONIZING
+                                    else -> null
+                                }
+
+                            TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
+                        }
+
+                        val result = requests.map {
+
+                            UploadRequestDto(
+                                id = it.id,
+                                filePath = it.filePath,
+                                durationMilliseconds = it.durationMilliseconds,
+                                errorMessage = it.errorMessage,
+                                mediaId = it.mediaId,
+                                mediaUrl = it.mediaUrl,
+                                uploadProgress = it.uploadProgress as Int?,
+                                transcriptionUrl = it.transcriptionUrl,
+                                deleteOnComplete = it.deleteOnComplete,
+                                includeInReport = it.includeInReport,
+                                isLibrary = it.isLibrary,
+                                fileType = it.fileType?.name,
+                                status = it.status?.name,
+                                createdAt = it.createdAt?.toString(),
+                                updatedAt = it.updatedAt?.toString()
+                            )
+                        }
+
+                        val jsonResult = Gson().toJson(result)
+
                         callback.onSuccess(jsonResult)
-                    } else {
-                        val mainStatus: TruvideoSdkMediaFileUploadRequestStatus? =
-                            when (statusValue) {
-                                "UPLOADING" -> TruvideoSdkMediaFileUploadRequestStatus.UPLOADING
-                                "IDLE" -> TruvideoSdkMediaFileUploadRequestStatus.IDLE
-                                "ERROR" -> TruvideoSdkMediaFileUploadRequestStatus.ERROR
-                                "PAUSED" -> TruvideoSdkMediaFileUploadRequestStatus.PAUSED
-                                "COMPLETED" -> TruvideoSdkMediaFileUploadRequestStatus.COMPLETED
-                                "CANCELED" -> TruvideoSdkMediaFileUploadRequestStatus.CANCELED
-                                "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadRequestStatus.SYNCHRONIZING
-                                else -> null
-                            }
-                        val request = TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
-                      //  Log.e("Rahul",""+request);
 
-                        val gson = Gson()
-                        val jsonResult = gson.toJson(request)
-                        callback.onSuccess(jsonResult)
-                        callback.onSuccess("" + request)
-                        /*val gson = GsonBuilder()
-                            .serializeNulls()
-                            .create()
-
-                        val jsonResult = gson.toJson(request)
-                        callback.onSuccess(jsonResult)*/
-
-                    }
                     } catch (e: Exception) {
+
                         callback.onFailure(
                             "GetAllRequests failed: ${e.message}"
                         )
                     }
-
                 }
 
             } catch (e: Exception) {
+
                 callback.onFailure(
                     "GetAllRequests failed: ${e.message}"
                 )
             }
         }
+//        @JvmStatic
+//        fun getAllRequests(statusValue: String, callback: MediaCallback) {
+//            try {
+//                CoroutineScope(Dispatchers.Main).launch {
+//                    try{
+//
+//                    /* if (statusValue == "") {
+//                         val request = TruvideoSdkMedia.getAllFileUploadRequests()
+//                         callback.onSuccess("" + request)
+//                     } else {
+//                         val mainStatus: TruvideoSdkMediaFileUploadStatus? = when (statusValue) {
+//                             "UPLOADING" -> TruvideoSdkMediaFileUploadStatus.UPLOADING
+//                             "IDLE" -> TruvideoSdkMediaFileUploadStatus.IDLE
+//                             "ERROR" -> TruvideoSdkMediaFileUploadStatus.ERROR
+//                             "PAUSED" -> TruvideoSdkMediaFileUploadStatus.PAUSED
+//                             "COMPLETED" -> TruvideoSdkMediaFileUploadStatus.COMPLETED
+//                             "CANCELED" -> TruvideoSdkMediaFileUploadStatus.CANCELED
+//                             "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadStatus.SYNCHRONIZING
+//                             else -> null
+//                         }
+//                         val request = TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
+//                         callback.onSuccess("" + request)
+//                     }*/
+//
+//                    if (statusValue == "") {
+//                        val request = TruvideoSdkMedia.getAllFileUploadRequests()
+//                        //callback.onSuccess("" + request)
+//                        val gson = Gson()
+//                        val jsonResult = gson.toJson(request)
+//                        callback.onSuccess(jsonResult)
+//                    } else {
+//                        val mainStatus: TruvideoSdkMediaFileUploadRequestStatus? =
+//                            when (statusValue) {
+//                                "UPLOADING" -> TruvideoSdkMediaFileUploadRequestStatus.UPLOADING
+//                                "IDLE" -> TruvideoSdkMediaFileUploadRequestStatus.IDLE
+//                                "ERROR" -> TruvideoSdkMediaFileUploadRequestStatus.ERROR
+//                                "PAUSED" -> TruvideoSdkMediaFileUploadRequestStatus.PAUSED
+//                                "COMPLETED" -> TruvideoSdkMediaFileUploadRequestStatus.COMPLETED
+//                                "CANCELED" -> TruvideoSdkMediaFileUploadRequestStatus.CANCELED
+//                                "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadRequestStatus.SYNCHRONIZING
+//                                else -> null
+//                            }
+//                        val request = TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
+//                        Log.e("Rahul",""+request);
+//
+//                        callback.onSuccess(Gson().toJson(request))
+//
+//                       // val gson = Gson()
+//                       // val jsonResult = gson.toJson(request)
+//                       // callback.onSuccess(jsonResult)
+//                       // callback.onSuccess("" + request)
+////                        val gson = GsonBuilder()
+////                            .serializeNulls()
+////                            .create()
+////
+////                        val jsonResult = gson.toJson(request)
+////                        callback.onSuccess(jsonResult)
+//
+//                    }
+//                    } catch (e: Exception) {
+//                        callback.onFailure(
+//                            "GetAllRequests failed: ${e.message}"
+//                        )
+//                    }
+//
+//                }
+//
+//            } catch (e: Exception) {
+//                callback.onFailure(
+//                    "GetAllRequests failed: ${e.message}"
+//                )
+//            }
+//        }
 
-
-       /* fun getAllStatusMergedFlat(callback: MediaCallback) {
-
-            CoroutineScope(Dispatchers.Main).launch {
-
-                try {
-
-                    val allStatuses = listOf(
-                        "IDLE",
-                        "UPLOADING",
-                        "SYNCHRONIZING",
-                        "ERROR",
-                        "COMPLETED",
-                        "PAUSED",
-                        "CANCELED"
-                    )
-
-                    val finalList = mutableListOf<Any>()
-
-                    for (status in allStatuses) {
-
-                        val data = withContext(Dispatchers.IO) {
-
-                            val mainStatus = when (status) {
-                                "UPLOADING" -> TruvideoSdkMediaFileUploadRequestStatus.UPLOADING
-                                "IDLE" -> TruvideoSdkMediaFileUploadRequestStatus.IDLE
-                                "ERROR" -> TruvideoSdkMediaFileUploadRequestStatus.ERROR
-                                "PAUSED" -> TruvideoSdkMediaFileUploadRequestStatus.PAUSED
-                                "COMPLETED" -> TruvideoSdkMediaFileUploadRequestStatus.COMPLETED
-                                "CANCELED" -> TruvideoSdkMediaFileUploadRequestStatus.CANCELED
-                                "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadRequestStatus.SYNCHRONIZING
-                                else -> null
-                            }
-
-                            if (mainStatus == null) {
-                                emptyList()
-                            } else {
-                                TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
-                            }
-                        }
-
-                        finalList.addAll(data)
-                    }
-
-                    // convert to SINGLE flat JSON array
-                    val jsonResult = GsonBuilder()
-                        .create()
-                        .toJson(finalList)
-
-                    callback.onSuccess(jsonResult)
-
-                } catch (e: Exception) {
-                    callback.onFailure("Error: ${e.message}")
-                }
-            }
-        }
-*/
-
-        /*fun fetchAllStatusRequests(callback: MediaCallback) {
-
-            CoroutineScope(Dispatchers.Main).launch {
-
-                val allStatuses = listOf(
-                    "IDLE",
-                    "UPLOADING",
-                    "SYNCHRONIZING",
-                    "ERROR",
-                    "COMPLETED",
-                    "PAUSED",
-                    "CANCELED"
-                )
-
-                try {
-
-                    val finalResult = mutableMapOf<String, String>()
-
-                    for (status in allStatuses) {
-
-                        val response = withContext(Dispatchers.IO) {
-
-                            val mainStatus = when (status) {
-                                "UPLOADING" -> TruvideoSdkMediaFileUploadRequestStatus.UPLOADING
-                                "IDLE" -> TruvideoSdkMediaFileUploadRequestStatus.IDLE
-                                "ERROR" -> TruvideoSdkMediaFileUploadRequestStatus.ERROR
-                                "PAUSED" -> TruvideoSdkMediaFileUploadRequestStatus.PAUSED
-                                "COMPLETED" -> TruvideoSdkMediaFileUploadRequestStatus.COMPLETED
-                                "CANCELED" -> TruvideoSdkMediaFileUploadRequestStatus.CANCELED
-                                "SYNCHRONIZING" -> TruvideoSdkMediaFileUploadRequestStatus.SYNCHRONIZING
-                                else -> null
-                            }
-
-                            val request = if (mainStatus == null) {
-                                TruvideoSdkMedia.getAllFileUploadRequests()
-                            } else {
-                                TruvideoSdkMedia.getAllFileUploadRequests(mainStatus)
-                            }
-
-                            Gson().toJson(request)
-                        }
-
-                        finalResult[status] = response
-
-                       // Log.d("STATUS_CHECK", "Status: $status -> $response")
-                    }
-
-                    // Final combined response
-                    val finalJson = Gson().toJson(finalResult)
-
-                    callback.onSuccess(finalJson)
-
-                } catch (e: Exception) {
-                    callback.onFailure("Fetch failed: ${e.message}")
-                }
-            }
-        }*/
 
         // ✅ Status
         @JvmStatic
@@ -1021,6 +976,7 @@ class DotnetTruvideoMedia {
         fun streamAllRequests(context: Context, callback: MediaCallback) {
             try {
                 val allRequest = TruvideoSdkMedia.streamAllFileUploadRequests()
+                Log.e("rahul",""+allRequest)
                 val gson = Gson()
                 val jsonResult = gson.toJson(allRequest)
                 callback.onSuccess(jsonResult)
@@ -1085,7 +1041,18 @@ class DotnetTruvideoMedia {
                     TruvideoSdkMedia
                         .streamAllFileUploadRequests()
                         .collect { list ->
-                            callback.onSuccess(Gson().toJson(list))
+                            try {
+                                Log.d("StreamUpload", "Type = ${list::class.java.name}")
+
+                                val json = Gson().toJson(list)
+                                Log.d("StreamUpload", "JSON = $json")
+
+                                callback.onSuccess(json)
+                            } catch (e: Exception) {
+                                Log.e("StreamUpload", "Serialization failed", e)
+                                callback.onFailure(e.message ?: "Serialization failed")
+
+                            }
                         }
                 } catch (e: Exception) {
                     callback.onFailure(
@@ -1116,7 +1083,7 @@ class DotnetTruvideoMedia {
 
         // ================= GET ALL FILE UPLOAD REQUESTS =================
 
-        @JvmStatic
+        /*@JvmStatic
         fun getAllFileUploadRequests(callback: MediaCallback) {
             CoroutineScope(Dispatchers.Main).launch {
                 try {
@@ -1128,7 +1095,7 @@ class DotnetTruvideoMedia {
                     )
                 }
             }
-        }
+        }*/
 
         // ================= GET ALL UPLOAD REQUESTS =================
 
@@ -1170,9 +1137,90 @@ class DotnetTruvideoMedia {
                 try {
                     TruvideoSdkMedia
                         .streamAllUploadRequests()
-                        .collect { list ->
+                        /*.collect { list ->
+                         Log.d("MediaSDK", "Type = ${list::class.qualifiedName}")
+                            Log.d("MediaSDK", list.toString())
                             callback.onSuccess(Gson().toJson(list))
+                        }*/
+
+                        .collect { list ->
+
+                            val response = list.map {
+
+                                UploadRequestResponse(
+                                    id = it.id,
+                                    tag = it.tag.toString(),
+                                    status = it.status.name,
+                                    type = it.type.name,
+                                    progress = it.progress,
+
+                                    mediaId = it.mediaId,
+                                    thumbnailPath = it.thumbnailPath,
+                                    contentType = it.contentType,
+                                    fileExtension = it.fileExtension,
+                                    duration = it.duration,
+
+                                    title = it.title,
+                                    errorMessage = it.errorMessage,
+
+                                    includeInReport = it.includeInReport,
+                                    isLibrary = it.isLibrary,
+                                    markForCompletion = it.markForCompletion,
+
+                                    tags = it.tags.entries.map { tag ->
+                                        tag.toString()
+                                    },
+
+                                    metadata = it.metadata.entries.associate { entry ->
+                                        entry.key.toString() to entry.toString()
+                                    },
+
+                                    initializationMetrics = OperationMetricsResponse(
+                                        startedAt = it.initializationMetrics.startedAt?.toString(),
+                                        endedAt = it.initializationMetrics.endedAt?.toString(),
+                                        completed = it.initializationMetrics.completed
+                                    ),
+
+                                    completionMetrics = OperationMetricsResponse(
+                                        startedAt = it.completionMetrics.startedAt?.toString(),
+                                        endedAt = it.completionMetrics.endedAt?.toString(),
+                                        completed = it.completionMetrics.completed
+                                    ),
+
+                                    fileUploadMetrics = OperationMetricsResponse(
+                                        startedAt = it.fileUploadMetrics.startedAt?.toString(),
+                                        endedAt = it.fileUploadMetrics.endedAt?.toString(),
+                                        completed = it.fileUploadMetrics.completed
+                                    ),
+
+                                    metrics = OperationMetricsResponse(
+                                        startedAt = it.metrics.startedAt?.toString(),
+                                        endedAt = it.metrics.endedAt?.toString(),
+                                        completed = it.metrics.completed
+                                    ),
+
+                                    parts = it.parts.map { part ->
+                                        UploadRequestPartResponse(
+                                            index = part.index,
+                                            createdAt = part.createdAt?.toString(),
+                                            updatedAt = part.updatedAt?.toString(),
+                                            metrics = OperationMetricsResponse(
+                                                startedAt = part.metrics.startedAt?.toString(),
+                                                endedAt = part.metrics.endedAt?.toString(),
+                                                completed = part.metrics.completed
+                                            )
+                                        )
+                                    },
+
+                                    createdAt = it.createdAt?.toString(),
+                                    updatedAt = it.updatedAt?.toString()
+                                )
+                            }
+
+                            callback.onSuccess(Gson().toJson(response))
                         }
+
+
                 } catch (e: Exception) {
                     callback.onFailure(
                         e.message ?: "StreamAllUploadRequests failed"
@@ -1183,19 +1231,261 @@ class DotnetTruvideoMedia {
 
         // ================= STREAM UPLOAD REQUEST BY ID =================
 
-        @JvmStatic
+        /*@JvmStatic
         fun streamUploadRequestById(id: Long, callback: MediaCallback) {
             CoroutineScope(Dispatchers.Main).launch {
                 try {
                     TruvideoSdkMedia
                         .streamUploadRequestById(id)
-                        .collect { item ->
-                            callback.onSuccess(Gson().toJson(item))
+                       *//* .collect { item ->
+                            Log.d("MediaSDK", item.toString())*//*
+
+                        .collect { item: TruvideoSdkMediaUploadRequest? ->
+
+                            item?.let {
+                                val json = JSONObject().apply {
+                                    put("id", it.id)
+                                    put("tag", it.tag)
+                                    put("status", it.status.name)
+                                    put("type", it.type.name)
+                                    put("contentType", it.contentType)
+                                    put("fileExtension", it.fileExtension)
+                                    put("duration", it.duration)
+                                    put("errorMessage", it.errorMessage)
+                                    put("progress", it.progress)
+                                    put("thumbnailPath", it.thumbnailPath)
+                                    put("mediaId", it.mediaId)
+                                    put("title", it.title)
+                                    put("includeInReport", it.includeInReport)
+                                    put("isLibrary", it.isLibrary)
+                                    put("markForCompletion", it.markForCompletion)
+                                    put("createdAt", it.createdAt.toString())
+                                    put("updatedAt", it.updatedAt.toString())
+                                }
+
+                                callback.onSuccess(json.toString())
+                            } ?: callback.onFailure("Upload request not found.")
                         }
+
+
+
+                           // callback.onSuccess(Gson().toJson(item))
+
                 } catch (e: Exception) {
                     callback.onFailure(
                         e.message ?: "StreamUploadRequestById failed"
                     )
+                }
+            }
+        }*/
+
+        @JvmStatic
+        fun streamUploadRequestById(id: Long, callback: MediaCallback) {
+
+            CoroutineScope(Dispatchers.Main).launch {
+
+                try {
+
+                    TruvideoSdkMedia
+                        .streamUploadRequestById(id)
+                        .collect { item: TruvideoSdkMediaUploadRequest? ->
+
+                            if (item == null) {
+                                callback.onFailure("Upload request not found.")
+                                return@collect
+                            }
+
+                            Log.d("MediaSDK", item.toString())
+
+                            val json = JSONObject()
+
+                            // Basic Information
+                            json.put("id", item.id)
+                            json.put("tag", item.tag)
+                            json.put("status", item.status.name)
+                            json.put("type", item.type.name)
+                            json.put("contentType", item.contentType)
+                            json.put("fileExtension", item.fileExtension)
+                            json.put("duration", item.duration)
+                            json.put("errorMessage", item.errorMessage)
+                            json.put("progress", item.progress)
+                            json.put("thumbnailPath", item.thumbnailPath)
+                            json.put("mediaId", item.mediaId)
+                            json.put("title", item.title)
+                            json.put("includeInReport", item.includeInReport)
+                            json.put("isLibrary", item.isLibrary)
+                            json.put("markForCompletion", item.markForCompletion)
+                            json.put("createdAt", item.createdAt.toString())
+                            json.put("updatedAt", item.updatedAt.toString())
+
+                            // Tags
+                           /* val tagsArray = JSONArray()
+                            item.tags.entries.forEach { entry ->
+                                tagsArray.put(entry.toString())
+                            }
+                            json.put("tags", tagsArray)*/
+
+                            val tagsEntries = JSONArray()
+
+                            item.tags.entries.forEach { entry ->
+
+                                val text = entry.toString()
+
+                                val regex = Regex("key=(.*?),\\s*value=(.*?)\\s*\\)")
+                                val match = regex.find(text)
+
+                                if (match != null) {
+
+                                    tagsEntries.put(
+                                        JSONObject().apply {
+                                            put("key", match.groupValues[1].trim())
+                                            put("value", match.groupValues[2].trim())
+                                        }
+                                    )
+                                }
+                            }
+
+                            json.put(
+                                "tags",
+                                JSONObject().apply {
+                                    put("entries", tagsEntries)
+                                }
+                            )
+
+
+
+                            // Metadata
+                           /* val metadataArray = JSONArray()
+                            item.metadata.entries.forEach { entry ->
+                                metadataArray.put(entry.toString())
+                            }
+                            json.put("metadata", metadataArray)*/
+
+                            val metadataEntries = JSONArray()
+
+                            item.metadata.entries.forEach { entry ->
+
+                                val text = entry.toString()
+
+                                val regex = Regex("key=(.*?),\\s*value=(.*?)\\s*\\)")
+                                val match = regex.find(text)
+
+                                if (match != null) {
+
+                                    metadataEntries.put(
+                                        JSONObject().apply {
+                                            put("key", match.groupValues[1].trim())
+                                            put("value", match.groupValues[2].trim())
+                                        }
+                                    )
+                                }
+                            }
+
+                            json.put(
+                                "metadata",
+                                JSONObject().apply {
+                                    put("entries", metadataEntries)
+                                }
+                            )
+
+                            // Initialization Metrics
+                            json.put(
+                                "initializationMetrics",
+                                JSONObject().apply {
+                                    put("startedAt", item.initializationMetrics.startedAt?.toString())
+                                    put("endedAt", item.initializationMetrics.endedAt?.toString())
+                                    put("completed", item.initializationMetrics.completed)
+                                }
+                            )
+
+                            // Completion Metrics
+                            json.put(
+                                "completionMetrics",
+                                JSONObject().apply {
+                                    put("startedAt", item.completionMetrics.startedAt?.toString())
+                                    put("endedAt", item.completionMetrics.endedAt?.toString())
+                                    put("completed", item.completionMetrics.completed)
+                                }
+                            )
+
+                            // File Upload Metrics
+                            json.put(
+                                "fileUploadMetrics",
+                                JSONObject().apply {
+                                    put("startedAt", item.fileUploadMetrics.startedAt?.toString())
+                                    put("endedAt", item.fileUploadMetrics.endedAt?.toString())
+                                    put("completed", item.fileUploadMetrics.completed)
+                                }
+                            )
+
+                            // Overall Metrics
+                            json.put(
+                                "metrics",
+                                JSONObject().apply {
+                                    put("startedAt", item.metrics.startedAt?.toString())
+                                    put("endedAt", item.metrics.endedAt?.toString())
+                                    put("completed", item.metrics.completed)
+                                }
+                            )
+
+                            // Parts
+                            val partsArray = JSONArray()
+
+                            item.parts.forEach { part ->
+
+                                val partJson = JSONObject()
+
+                                partJson.put("index", part.index)
+                                partJson.put("createdAt", part.createdAt.toString())
+                                partJson.put("updatedAt", part.updatedAt.toString())
+
+                                partJson.put(
+                                    "metrics",
+                                    JSONObject().apply {
+                                        put("startedAt", part.metrics.startedAt?.toString())
+                                        put("endedAt", part.metrics.endedAt?.toString())
+                                        put("completed", part.metrics.completed)
+                                    }
+                                )
+
+                                partsArray.put(partJson)
+                            }
+
+                            json.put("parts", partsArray)
+
+                            callback.onSuccess(json.toString())
+                        }
+
+                } catch (e: Exception) {
+
+                    Log.e("MediaSDK", "streamUploadRequestById", e)
+
+                    callback.onFailure(
+                        e.message ?: "StreamUploadRequestById failed"
+                    )
+                }
+            }
+        }
+
+        @JvmStatic
+        fun streamUploadRequestById1(id: Long, callback: MediaCallback) {
+            CoroutineScope(Dispatchers.Main).launch {
+                try {
+                    TruvideoSdkMedia
+                        .streamUploadRequestById(id)
+                        .collect { item: TruvideoSdkMediaUploadRequest? ->
+
+                            if (item == null) {
+                                callback.onFailure("Upload request not found.")
+                                return@collect
+                            }
+
+                            Log.d("MediaSDK", item.toString())
+
+                            callback.onSuccess(item.toString())
+                        }
+                } catch (e: Exception) {
+                    callback.onFailure(e.message ?: "StreamUploadRequestById failed")
                 }
             }
         }

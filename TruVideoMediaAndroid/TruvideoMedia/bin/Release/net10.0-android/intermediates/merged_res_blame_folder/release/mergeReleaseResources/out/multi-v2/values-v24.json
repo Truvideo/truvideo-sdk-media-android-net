@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-v24/values-v24.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-44:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -30,25 +20,25 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-v24/values-v24.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-42:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/79480dad21842442e2fe64b5ce4bc4ff/transformed/material-1.12.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/36789f91e241e527cc09fd38dbbd108f/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -64,6 +54,16 @@
                         "endLines": "4,5,6,7,10,13,16,19",
                         "endColumns": "84,98,86,100,10,10,10,10",
                         "endOffsets": "427,526,613,714,913,1126,1327,1542"
+                    }
+                },
+                {
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

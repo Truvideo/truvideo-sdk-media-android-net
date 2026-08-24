@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-46:/values-v26/values-v26.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-release-44:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-v26/values-v26.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -17,10 +17,10 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.media.TruvideoMedia-release-48:/values-v26/values-v26.xml",
+            "outputFile": "com.truvideo.media.TruvideoMedia-mergeReleaseResources-42:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/290bc0160e9bd25e961166939738a448/transformed/appcompat-1.7.1/res/values-v26/values-v26.xml",
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/2f3deb46d1ddd35bf5f7ba5c1a50eed5/transformed/appcompat-1.7.1/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

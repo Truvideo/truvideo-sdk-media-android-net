@@ -8,7 +8,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
     }
 
 
@@ -22,11 +22,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        //jvmTarget = "17"
     }
 
 }
@@ -43,9 +43,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.truvideo.sdk.android.media)
-    /*configurations["copyDependencies"].dependencies.add(
-        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-media:79.1.3")
-    )*/
+    implementation(libs.androidx.startup.runtime)
+    configurations["copyDependencies"].dependencies.add(
+        project.dependencies.create("com.truvideo.com:sdk-media:1.0.5")
+    )
+    implementation(libs.gson)
 
 
 }
